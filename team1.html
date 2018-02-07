@@ -6,7 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The Path</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
+    <<script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     
@@ -14,8 +17,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.js"></script>
     <link rel="stylesheet" href="main.css">
+    <script src="app.js"></script>
     <link rel="shortcut icon" href="Assets/favicon.ico" />
-    
   </head>
 <body>
   <!--Banner-->
@@ -23,11 +26,8 @@
   </div>
 <!--End of Banner-->
 
-<!--Page One-->
-
-<div class="#home"></div>
-
 <!--NavBar-->
+
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -43,25 +43,29 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav nav-justified">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contacts</a></li>
-        <li><a href="#review">Review</a></li>
-        <li><a href="#dashboard">Dashboard</a></li>
+        <li id="home" class="#home"><a href="#home">Home</a></li>
+        <li id="about" class="#about"><a href="#about">About</a></li>
+        <li id="contact" class="#contact"><a href="#contact">Contacts</a></li>
+        <li id="review" class="#review"><a href="#review">Review</a></li>
+        <li id="dashboard" class="dashboard"><a href="#dashboard">Dashboard</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
       <!--End of NavBar-->
 
+<!--Page One-->
+
+<div id="homepg">
+
       <!--SearchBox-->
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
             <div class="input-group">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Go!</button>
+                <button class="btn btn-default" type="button">Search</button>
               </span>
-              <input type="text" class="form-control" placeholder="Search for...">
+              <input type="text" class="form-control" placeholder="What Do You Want To Find?">
             </div><!-- /input-group -->
           </div><!-- /.col-lg-6 -->
       </div>
@@ -70,23 +74,22 @@
 
       <!--Text and Link-->
     <div>
-      <h1 class="crumbs"style="padding-left:300px;padding-right:300px">Crumbs</h1>
-      <p class= "text"style="padding-left:300px;padding-right:300px;margin-bottom:0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In risus nisl,
-         consectetur ut mauris at, porta posuere odio. Morbi arcu nisl, euismod et
-          fringilla a, elementum sed ante. Ut ut enim ligula. Morbi lacinia auctor
-           tempus. Sed convallis ut augue vel porta. Nulla nec pretium magna. Mauris
-            id egestas sem, vel elementum enim. Donec vel mi id justo viverra condimentum. Integer dignissim quis magna eu finibus. Integer velit nisl, vehicula eu felis at, maximus tincidunt lorem. 
-        <p style="padding-left:950px; padding-right:300px"><a href="#more">More >></a></li>
-      </p>
+      <h1 class="crumbs"style="padding-left:300px;padding-right:300px;">Your Future Begins Here With Us</h1>
     </div>  
 
     <!--End of Text and Link-->
 
-    <!--Images-->
-      <img src="Assets/Inkedgrades_LI.jpg" class="img-fluid" id="grades" alt="Responsive image">
-      <img src="Assets/goal.png" class="img-fluid" id="goal" alt="Responsive image">
-    <!--End of Images-->      
+    <!--Images-->  
+    <h4 style="padding-left:200px;padding-top:50px">Example of Current Report Card</h4>
+    <h4 style="padding-left:900px">Example of Current Report Card</h4>
+    <img src="Assets/Inkedgrades_LI.jpg" class="img-fluid" id="grades" alt="Responsive image">  
+    <img src="Assets/goal.png" class="img-fluid" id="goal" alt="Responsive image">
+    <h2>Graphs That Track Where You Are and Where You Want To Be</h2>  
+    <img src="Assets/graph.png" id="graph">
+      <!--End of Images-->      
     
+      <h2>Links To Partners and Activities</h2>
+
     <!--Table 1-->
     <table style="margin-top:50px;"class="table table-bordered">
       <thead>
@@ -97,57 +100,84 @@
       </thead>
       <tbody>
         <tr>
-          <td>Public High School</td>
-          <td>Scholarship</td>
+          <td><a target= "_blank"href="https://www.betahs.com">Public High School</a></td>
+          <td><a target="_blank" href="https://www.scholarships.com/scholarship-search">Scholarships</a></td>
         </tr>
         <tr>
-          <td>Enza Academy</td>
-          <td>Internship</td>
+          <td><a target="_blank"href="http://www.enzaacademy.org/">Enza Academy</a></td>
+          <td><a target="_blank"href="http://www.internships.com/high-school/new-york-ny">Internships</a></td>
         </tr>
         <tr>
-          <td>College</td>
-          <td>Prioritize</td>
+          <td><a target="_blank" href="https://www.niche.com/colleges/search/best-colleges/">Top Colleges</a></td>
+          <td><a target="_blank" href="https://www.bgca.org/">Clubs</a></td>
         </tr>
       </tbody>
     </table>
     
     <!--End of Table 1-->
-
   </div>
-
+  </div>
   <!--End of Home Page-->
 
   <!--Page Two-->
 
-  <div class="#about">
-    <p> Test Page 2</p>
-  
+  <div id="aboutpg">
+    <h1>WHAT IS "THE PATH"?</h1>
+    <p>To understand what "The Path" is, you must first understand the problem we wish to fix.</p>
+    <div></div>
+    <h1>The Problem</h1>
+    <p>The problem we're currently facing is that we have alot of uninformed high school students who end up falling short of going to college. They often dropout or end up going to vocational school. Out of this fact, the majority of those dropping out are in the minority (African Americans, Hispanics, etc.)</p>
+    <div></div>
+    <p>Now that we understand the problem, let us inform you on the solution.</p>
+    <div></div>
+    <h1>The Path</h1>
+    <p>The Path is a program that provides students with personalized real time data so they can make informed decisions to reach their academic goals. It relies on an AI guidance counselor to monitor the student's grades and provide feedback for improvement. </p>
+
+
   </div>
 
   <!--End of Page Two-->
 
   <!--Page Three-->
 
-  <div class="#contact">
-    <p> Test Page 3</p>
+  <div id="contactpg">
+    <h1>The Team</h1>
+    <p>Kennedy Adade</p>
+    <p>Denisse Gonzales</p>
+    <p>Angel Rodriguez</p>
+    <p>Amia Diakite</p>
+    <p>Raymond Asiedu</p>
+    <p>Elijah Berard</p>
+    <p>Kyle Barton</p>
+    <p>Malaki Martin</p>
+<h2>And Our Forgotten Brothers Who Had To Leave Early</h2>
+    <p>Alexander Cruz (Day 1)</p>
+    <p>Steven Tejeda (Day 1 & 2)</p>
   </div>
 
   <!--End of Page Three-->
 
   <!--Page Four-->
 
-  <div class="#review">
+  <div id="reviewpg">
   
-  <p> Test Page 4</p>
+  <p>NULL FOR NOW :P</p>
   </div>
 
   <!--End of Page Four-->
 
   <!--Page Five-->
 
-  <div class="#dashboard">
+  <div id="dashboardpg">
   
-    <p> Test Page 5</p>
+    <h1> Hello,</h1>
+    <h2>MALAKI MARTIN</h2>
+    <img src="Assets/selfpopo.jpg" id="self" style="padding-left:580px">
+
+  <h1> You Are Currently:</h1>
+  <h1 style="color:green"> 😎 On Track 😎</h1>
+  <h5><a target="_blank" href="https://ylakeland.com/arts-culture/10-tips-for-staying-on-track-in-college/">Tips For Staying On Track</a></h5>
+  <h5><a target="_blank" href="https://www.nypl.org/events/calendar">Reward For Staying On Track</a></h5>
 
   </div>
 
